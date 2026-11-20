@@ -203,8 +203,8 @@
       });
       f.addEventListener("pointerleave", () => disc.classList.remove("on"));
     });
-    document.querySelectorAll(".st-tile").forEach((tile, k) => {
-      const no = () => (k + 1).toLocaleString(root.lang === "fa" ? "fa-IR" : "en", { minimumIntegerDigits: 2 });
+    document.querySelectorAll(".st-card").forEach((tile) => {
+      const no = () => (tile.querySelector(".st-no")?.textContent || "").trim();
       tile.addEventListener("pointerenter", (e) => show(e, tile, no(), "study"));
       tile.addEventListener("pointermove", (e) => moveDisc(e));
       tile.addEventListener("pointerleave", () => disc.classList.remove("on"));
